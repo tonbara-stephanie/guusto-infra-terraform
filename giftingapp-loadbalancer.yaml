@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: giftingapp-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: merchant-port
+      targetPort: shopping-port
+      protocol: TCP
+  selector:
+    name: giftingapp
